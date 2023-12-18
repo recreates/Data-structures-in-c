@@ -18,8 +18,8 @@ src *createnode(int data) {
 }
 
 src *createlist(int n) {
-    src *head = NULL;
-    src *current = NULL;
+    src *head = NULL; //- points to the first node
+    src *current = NULL; //- used to traverse the list
 
     for (int i = 1; i <= n; i++) {
         int element;
@@ -29,11 +29,11 @@ src *createlist(int n) {
         src *newnode = createnode(element);
 
         if (head == NULL) {
-            // For the first element, update both 'head' and 'current' pointers
+            
             head = newnode;
             current = head;
         } else {
-            // For subsequent elements, update 'next' pointer of the current node
+            
             current->next = newnode;
             current = newnode;
         }
